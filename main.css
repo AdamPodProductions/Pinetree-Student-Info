@@ -2,6 +2,11 @@
 	display: block;
 }
 
+#invalid-id {
+	color: red;
+	display: none;
+}
+
 #student-info {
 	display: none;
 }
