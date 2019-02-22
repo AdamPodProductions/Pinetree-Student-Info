@@ -1,3 +1,17 @@
 #student-id-form {
 	display: block;
 }
+
+#student-info {
+	display: none;
+}
+
+#courses {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+#courses th, td {
+	border: 1px solid black;
+	padding: 0.5rem;
+}
