@@ -6,9 +6,11 @@ students[0] = CreateNewStudent(
 	1009, 
 	[CreateNewCourse("MSC--10H-02", "Science 10 Honours", "B207", "2", "1 (Day 1 - Day 2)", 4), 
 	CreateNewCourse("XAT--00P1-1009", "PACK", "B207", "Full Year", "6 (Day 1 - Day 2)", 0)]
+	"A877"
+	"30-15-30"
 	);
 
-function CreateNewStudent(firstName, lastName, id, pack, courses) {
+function CreateNewStudent(firstName, lastName, id, pack, courses, lockerNumber, lockerCombo) {
 	var student = new Object();
 
 	student.firstName = firstName;
@@ -16,6 +18,8 @@ function CreateNewStudent(firstName, lastName, id, pack, courses) {
 	student.id = id;
 	student.pack = pack;
 	student.courses = courses;
+	student.lockerNumber = lockerNumber;
+	student.lockerCombo = lockerCombo;
 
 	return student;
 }
