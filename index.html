@@ -7,20 +7,25 @@
 	<title>Pinetree Secondary Student Information</title>
 </head>
 <body>
-	<form action="#" onsubmit="SubmitStudentID(); return false;" id="student-id-form">
-		<label for="student-id">Student ID</label>
-		<input type="number" name="student-id" id="student-id" required>
+	<form action="#" onsubmit="Login(); return false;" id="login-form">
+		<label for="username-input">Username</label>
+		<input type="text" name="username-input" id="username-input" required>
+		<br>
+		<label for="password-input">Password</label>
+		<input type="password" name="password-input" id="password-input" required>
 
 		<input type="submit" name="submit-student-id">
 
 		<br>
 
-		<p id="invalid-id">That student ID is invalid</p>
+		<p id="invalid-login">Username or password invalid</p>
 	</form>
 
 	<div id="student-info">
 		<p id="name">Name: Student name</p>
 		<p id="id">Student ID: 1111111</p>
+		<p id="username">Username: 130-lfirst</p>
+		<p id="password">Password: tiger111</p>
 		<p id="pack">PACK: 0000</p>
 
 		<table id="courses">

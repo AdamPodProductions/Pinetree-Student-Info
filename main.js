@@ -2,7 +2,9 @@ var students = [];
 students[0] = CreateNewStudent(
 	"Adam", 
 	"Podoxin", 
-	1265646, 
+	1265646,
+	"130-apodoxin",
+	"enrol854", 
 	1009, 
 	[
 	CreateNewCourse("XAT--00P1-1009", "PACK", "B207", "Richard, Suzanne", "Full Year", "6 (Day 1 - Day 2)", 0),
@@ -22,12 +24,14 @@ students[0] = CreateNewStudent(
 	"30-15-30"
 	);
 
-function CreateNewStudent(firstName, lastName, id, pack, courses, lockerNumber, lockerCombo) {
+function CreateNewStudent(firstName, lastName, id, username, password, pack, courses, lockerNumber, lockerCombo) {
 	var student = new Object();
 
 	student.firstName = firstName;
 	student.lastName = lastName;
 	student.id = id;
+	student.username = username;
+	student.password = password;
 	student.pack = pack;
 	student.courses = courses;
 	student.lockerNumber = lockerNumber;
@@ -50,9 +54,9 @@ function CreateNewCourse(code, name, room, teacher, semester, block, credit) {
 	return course;
 }
 
-function GetStudentFromID(id) {
+function GetStudentFromLogin(username, password) {
 	for (var i = 0; i < students.length; i++) {
-		if(id == students[i].id) {
+		if(username == students[i].username && password == students[i].password) {
 			return students[i];
 		}
 	}
@@ -60,17 +64,19 @@ function GetStudentFromID(id) {
 	return null;
 }
 
-function SubmitStudentID() {
-	var student = GetStudentFromID(document.getElementById("student-id").value);
+function Login() {
+	var student = GetStudentFromLogin(document.getElementById("username-input").value, document.getElementById("password-input").value);
 
 	if(student == null) {
-		document.getElementById("invalid-id").style.display = "block";
+		document.getElementById("invalid-login").style.display = "block";
 	} else {
-		document.getElementById("student-id-form").style.display = "none";
+		document.getElementById("login-form").style.display = "none";
 		document.getElementById("student-info").style.display = "block";
 
 		document.getElementById("name").innerHTML = "Name: " + student.firstName + " " + student.lastName;
 		document.getElementById("id").innerHTML = "Student ID: " + student.id;
+		document.getElementById("username").innerHTML = "Username: " + student.username;
+		document.getElementById("password").innerHTML = "Password: " + student.password;
 		document.getElementById("pack").innerHTML = "PACK: " + student.pack;
 
 		var i = 0;
