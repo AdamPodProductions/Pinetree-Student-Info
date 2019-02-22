@@ -5,8 +5,8 @@ students[0] = CreateNewStudent(
 	1265646, 
 	1009, 
 	[CreateNewCourse("MSC--10H-02", "Science 10 Honours", "B207", "2", "1 (Day 1 - Day 2)", 4), 
-	CreateNewCourse("XAT--00P1-1009", "PACK", "B207", "Full Year", "6 (Day 1 - Day 2)", 0)]
-	"A877"
+	CreateNewCourse("XAT--00P1-1009", "PACK", "B207", "Full Year", "6 (Day 1 - Day 2)", 0)],
+	"A877",
 	"30-15-30"
 	);
 
@@ -49,5 +49,6 @@ function GetStudentFromID(id) {
 
 function SubmitStudentID() {
 	var student = GetStudentFromID(document.getElementById("student-id").value);
+	document.getElementById("student-id-form").style.display = "none";
 	alert(student.firstName + " " + student.lastName + " - " + student.id + " " + student.courses[0].name);
 }
